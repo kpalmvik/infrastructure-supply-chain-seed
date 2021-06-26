@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/kpalmvik/infrastructure-supply-chain-seed#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",
