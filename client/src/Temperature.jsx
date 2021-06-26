@@ -1,17 +1,22 @@
-import styles from "./Temperature.module.css";
 import { useState, useEffect } from "react";
 
+import Average from "./Average";
+import TemperatureBars from "./TemperatureBars";
+
+import styles from "./Temperature.module.css";
+
 const Temperature = function Temperature({ children }) {
-  const [hello, setHello] = useState();
+  const [temperatureData, setTemperatureData] = useState();
   useEffect(() => {
-    fetch("/api/hello")
+    fetch("/api/temperature")
       .then((response) => response.json())
-      .then((data) => setHello(data));
+      .then((data) => setTemperatureData(data));
   }, []);
 
   return (
     <div className={styles.temperature}>
-      Response from <code>/api/hello</code>:<pre>{JSON.stringify(hello)}</pre>
+      <Average average={temperatureData?.average} />
+      <TemperatureBars entries={temperatureData?.entries} />
     </div>
   );
 };

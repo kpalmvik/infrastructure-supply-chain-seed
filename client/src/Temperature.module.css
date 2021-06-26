@@ -1,5 +1,13 @@
 .temperature {
   background: var(--darkBlue);
   color: #fff;
-  padding: 48px;
+  padding: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 800px) {
+  .temperature {
+    padding: 48px;
+  }
 }
