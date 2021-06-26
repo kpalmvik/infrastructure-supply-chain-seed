@@ -1,0 +1,18 @@
+.mainText {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.mainText h1 {
+  font-size: 36px;
+  padding-bottom: 14px;
+  line-height: 43px;
+  margin: 0;
+}
+
+.mainText p {
+  margin: 0;
+  padding-bottom: 1em;
+}
