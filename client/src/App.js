@@ -17,8 +17,7 @@ function App() {
             Reset
           </Button>
         </ButtonBar>
-        <MainText>
-          <h1>Infrastructure supply chain seed lean startup technology </h1>
+        <MainText title="Infrastructure supply chain seed lean startup technology">
           <p>
             Assets traction angel investor user experience social media leverage
             value proposition startup success founders creative. Equity value
