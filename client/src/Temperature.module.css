@@ -2,4 +2,6 @@
   background: var(--darkBlue);
   color: #fff;
   padding: 48px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
