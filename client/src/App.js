@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 
 function App() {
   const [hello, setHello] = useState();
