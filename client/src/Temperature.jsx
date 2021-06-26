@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Average from "./Average";
+import TemperatureBars from "./TemperatureBars";
 
 import styles from "./Temperature.module.css";
 
@@ -12,10 +13,10 @@ const Temperature = function Temperature({ children }) {
       .then((data) => setTemperatureData(data));
   }, []);
 
-  const { average } = temperatureData;
   return (
     <div className={styles.temperature}>
-      <Average average={average} />
+      <Average average={temperatureData?.average} />
+      <TemperatureBars entries={temperatureData?.entries} />
     </div>
   );
 };
