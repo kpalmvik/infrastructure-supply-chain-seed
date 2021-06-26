@@ -8,6 +8,39 @@ function App() {
       <Header />
       <Content>
         <Temperature />
+        <section>
+          <button>Show me a Trick</button>
+          <button type="reset">Reset</button>
+        </section>
+        <section>
+          <h1>Infrastructure supply chain seed lean startup technology </h1>
+          <p>
+            Assets traction angel investor user experience social media leverage
+            value proposition startup success founders creative. Equity value
+            proposition launch party business-to-consumer research &amp;
+            development freemium bandwidth stock scrum project analytics.
+          </p>
+          <p>
+            Agile development backing business-to-consumer analytics burn rate
+            leverage business-to-business market creative responsive web design
+            graphical user interface
+          </p>
+        </section>
+        <section>
+          <ul>
+            <li>
+              <strong>Shot12 image</strong>
+            </li>
+            <li>
+              <strong>Yard 1 image</strong>
+              <h2>Direct mailing strategy buzz social proof</h2>
+            </li>
+            <li>
+              <strong>Tesla cat image</strong>
+              <h2>Hypotheses value proposition</h2>
+            </li>
+          </ul>
+        </section>
       </Content>
     </>
   );
