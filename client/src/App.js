@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Content from "./Content";
 import Header from "./Header";
 
 function App() {
@@ -11,9 +12,12 @@ function App() {
   return (
     <>
       <Header />
-      <div>
-        Response from <code>/api/hello</code>:<pre>{JSON.stringify(hello)}</pre>
-      </div>
+      <Content>
+        <div>
+          Response from <code>/api/hello</code>:
+          <pre>{JSON.stringify(hello)}</pre>
+        </div>
+      </Content>
     </>
   );
 }
