@@ -1,13 +1,16 @@
 .card {
+  --largeImageWidth: 583px;
+  --largeImageHeight: 394px;
+  --smallImageWidth: 265px;
   background-color: #fff;
   height: 100%;
   width: 100%;
-  max-width: 265px;
+  max-width: var(--smallImageWidth);
 }
 
 .largeCard {
   width: 100%;
-  max-width: 583px;
+  max-width: var(--largeImageWidth);
 }
 
 .image {
@@ -16,12 +19,12 @@
   height: auto;
   margin: 0;
   padding: 0;
-  max-width: 265px;
+  max-width: var(--smallImageWidth);
   object-fit: contain;
 }
 
 .largeImage {
-  max-width: 583px;
+  max-width: var(--largeImageWidth);
 }
 
 .title {
@@ -43,6 +46,6 @@
 
 @media screen and (min-width: 1250px) {
   .card {
-    height: 394px;
+    height: var(--largeImageHeight);
   }
 }
