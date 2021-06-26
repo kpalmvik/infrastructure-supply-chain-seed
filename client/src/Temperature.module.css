@@ -1,0 +1,5 @@
+.temperature {
+  background: var(--darkBlue);
+  color: #fff;
+  padding: 48px;
+}
