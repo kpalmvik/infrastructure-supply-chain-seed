@@ -1,3 +1,11 @@
+const fetch = require("node-fetch");
+
+const appOrigin = process.env.APP_ORIGIN;
+const email = process.env.EMAIL;
+const password = process.env.PASSWORD;
+
+const tokenURL = `${appOrigin}/v4/login.credentials`;
+
 const mockData = {
   average: 10,
   entries: [
@@ -6,8 +14,21 @@ const mockData = {
   ],
 };
 
-const temperature = (req, res) => {
-  res.json(mockData);
+const getJWT = async function getJSONWebToken(email, password) {
+  const response = await fetch(tokenURL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
+  return await response.json();
+};
+
+const temperature = async (req, res) => {
+  const token = await getJWT(email, password);
+  res.json({ ...mockData, token });
 };
 
 module.exports = temperature;
