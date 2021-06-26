@@ -1,0 +1,48 @@
+.card {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  max-width: 265px;
+}
+
+.largeCard {
+  width: 100%;
+  max-width: 583px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  max-width: 265px;
+  object-fit: contain;
+}
+
+.largeImage {
+  max-width: 583px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0;
+  padding: 16px 25px 16px;
+}
+
+@media screen and (min-width: 650px) {
+  .card {
+    height: 320px;
+  }
+
+  .largeCard {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .card {
+    height: 394px;
+  }
+}
