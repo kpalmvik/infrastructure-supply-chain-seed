@@ -4,7 +4,8 @@
   "description": "Assets traction angel investor user experience social media leverage value proposition startup success founders creative. Equity value proposition launch party business-to-consumer research & development freemium bandwidth stock scrum project analytics.",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "server": "node server.js",
+    "client": "npm run start --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
