@@ -1,5 +1,8 @@
-import styles from "./Temperature.module.css";
 import { useState, useEffect } from "react";
+
+import Average from "./Average";
+
+import styles from "./Temperature.module.css";
 
 const Temperature = function Temperature({ children }) {
   const [temperatureData, setTemperatureData] = useState();
@@ -9,8 +12,11 @@ const Temperature = function Temperature({ children }) {
       .then((data) => setTemperatureData(data));
   }, []);
 
+  const { average } = temperatureData;
   return (
-    <div className={styles.temperature}>{JSON.stringify(temperatureData)}</div>
+    <div className={styles.temperature}>
+      <Average average={average} />
+    </div>
   );
 };
 
