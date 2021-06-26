@@ -1,0 +1,16 @@
+.button {
+  appearance: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 600; /* Note! This will result in faux bold with this font */
+  border: 1px solid var(--turquoise);
+  background-color: var(--turquoise);
+  color: #fff;
+}
+
+.secondary {
+  border-color: var(--darkGray);
+  background-color: #fff;
+  color: var(--darkGray);
+}

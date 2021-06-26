@@ -1,3 +1,5 @@
+import Button from "./Button";
+import ButtonBar from "./ButtonBar";
 import Content from "./Content";
 import Header from "./Header";
 import Temperature from "./Temperature";
@@ -8,10 +10,12 @@ function App() {
       <Header />
       <Content>
         <Temperature />
-        <section>
-          <button>Show me a Trick</button>
-          <button type="reset">Reset</button>
-        </section>
+        <ButtonBar>
+          <Button>Show me a Trick</Button>
+          <Button secondary type="reset">
+            Reset
+          </Button>
+        </ButtonBar>
         <section>
           <h1>Infrastructure supply chain seed lean startup technology </h1>
           <p>
