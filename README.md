@@ -1,6 +1,6 @@
 # Infrastructure Supply Chain Seed Lean Startup Technology (ISCSLST)
 
-**ISCSLST** is an API driven web application that displays a simple greeting directed to a global audience in JSON format. The data is fetched by the client from the server API, which in turn retrieves it from a third party GraphQL API.
+**ISCSLST** is an API driven web application that displays the temperatures for the current day. The data is fetched by the client from the server API, which returns a mocked dataset with an average and individual hourly temperatures.
 
 The application consist of two parts: [server](#server) and [client](#client).
 
