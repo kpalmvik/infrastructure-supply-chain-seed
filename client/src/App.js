@@ -2,6 +2,7 @@ import Button from "./Button";
 import ButtonBar from "./ButtonBar";
 import Content from "./Content";
 import Header from "./Header";
+import MainText from "./MainText";
 import Temperature from "./Temperature";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
             Reset
           </Button>
         </ButtonBar>
-        <section>
+        <MainText>
           <h1>Infrastructure supply chain seed lean startup technology </h1>
           <p>
             Assets traction angel investor user experience social media leverage
@@ -29,7 +30,7 @@ function App() {
             leverage business-to-business market creative responsive web design
             graphical user interface
           </p>
-        </section>
+        </MainText>
         <section>
           <ul>
             <li>
