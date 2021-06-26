@@ -1,5 +1,44 @@
-# Infrastructure supply chain seed lean startup technology
+# Infrastructure Supply Chain Seed Lean Startup Technology (ISCSLST)
 
-Assets traction angel investor user experience social media leverage value proposition startup success founders creative. Equity value proposition launch party business-to-consumer research & development freemium bandwidth stock scrum project analytics.
+**ISCSLST** is an API driven web application that displays a simple greeting directed to a global audience in JSON format. The data is fetched by the client from the server API, which in turn retrieves it from a third party GraphQL API.
 
-Agile development backing business-to-consumer analytics burn rate leverage business-to-business market creative responsive web design graphical user interface
+The application consist of two parts: [server](#server) and [client](#client).
+
+## Development
+
+1. Clone the git repository
+2. Install the npm dependencies from inside the project directory:
+    ```console
+    $ npm i
+    $ npm i --prefix client
+    ```
+3. Start the server and client at the same time:
+    ```console
+    $ npm start
+    ```
+4. The web application, running on `http://localhost:3000`, will automatically open in a web browser.
+
+Both the server and the client are automatically updated whenever the source files are changed.
+
+### Technical Details
+
+The server is started by running `npm run server`. It is running through [nodemon](https://nodemon.io/), which will monitor for any changes in the source code and automatically restart the server. The server will bind to `http://localhost:3001`.
+
+The client is started by running `npm run client`. It is running using the Create React App server on `http://localhost:3000`, and leverages its [proxy feature](https://create-react-app.dev/docs/proxying-api-requests-in-development/) to transparently proxy the server API. Any request that does not accept `text/html` for an unknown resource will automatically be proxied to the server on `http://localhost:3001`.
+
+The server and client are simultaneously started by running `npm start`, through [concurrently](https://github.com/kimmobrunfeldt/concurrently#readme).
+
+## Server
+
+The server provides a simple API the the client can make a request to.
+
+### Technology Used
+
+The server is based on [Express](https://expressjs.com/), a minimal and flexible Node.js web application framework.
+
+## Client
+
+The client is a static HTML website with corresponding JavaScript that makes a request to the API provided by the server.
+### Technology Used
+
+The client is based on [Create React App](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to quickly create an efficient development environment.
