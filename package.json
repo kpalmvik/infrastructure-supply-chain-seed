@@ -4,6 +4,7 @@
   "description": "Assets traction angel investor user experience social media leverage value proposition startup success founders creative. Equity value proposition launch party business-to-consumer research & development freemium bandwidth stock scrum project analytics.",
   "main": "index.js",
   "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
     "client": "npm run start --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +21,8 @@
   "homepage": "https://github.com/kpalmvik/infrastructure-supply-chain-seed#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
   }
 }
