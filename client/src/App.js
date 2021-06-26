@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Header from "./Header";
 
 function App() {
   const [hello, setHello] = useState();
@@ -8,9 +9,12 @@ function App() {
       .then((data) => setHello(data));
   }, []);
   return (
-    <div>
-      Response from <code>/api/hello</code>:<pre>{JSON.stringify(hello)}</pre>
-    </div>
+    <>
+      <Header />
+      <div>
+        Response from <code>/api/hello</code>:<pre>{JSON.stringify(hello)}</pre>
+      </div>
+    </>
   );
 }
 
