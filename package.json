@@ -1,0 +1,29 @@
+{
+  "name": "infrastructure-supply-chain-seed",
+  "version": "1.0.0",
+  "description": "Assets traction angel investor user experience social media leverage value proposition startup success founders creative. Equity value proposition launch party business-to-consumer research & development freemium bandwidth stock scrum project analytics.",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "npm run start --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpalmvik/infrastructure-supply-chain-seed.git"
+  },
+  "author": "Kristofer Palmvik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kpalmvik/infrastructure-supply-chain-seed/issues"
+  },
+  "homepage": "https://github.com/kpalmvik/infrastructure-supply-chain-seed#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7"
+  }
+}
