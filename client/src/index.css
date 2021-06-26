@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Avenir Next';
+  src: local('Avenir Next'),
+       url('./fonts/AvenirNextRegular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Silka';
+  src: local('Silka'),
+       url('./fonts/SilkaBold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --brightGray: #e5e5e5;
   --darkGray: #4a4a4a;
