@@ -48,4 +48,9 @@
   .card {
     height: var(--largeImageHeight);
   }
+
+  .largeImage {
+    object-fit: cover;
+    height: 100%;
+  }
 }
