@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Button from "./Button";
 import ButtonBar from "./ButtonBar";
 import Card from "./Card";
@@ -12,14 +14,16 @@ import teslaCat from "./images/tesla-cat.png";
 import yard from "./images/yard.png";
 
 function App() {
+  const [trick, setTrick] = useState(false);
   return (
     <>
       <Header />
       <Content>
+        {trick ? "🦄" : "🍮"}
         <Temperature />
         <ButtonBar>
-          <Button>Show me a Trick</Button>
-          <Button secondary type="reset">
+          <Button onClick={() => setTrick(true)}>Show me a Trick</Button>
+          <Button secondary type="reset" onClick={() => setTrick(false)}>
             Reset
           </Button>
         </ButtonBar>
