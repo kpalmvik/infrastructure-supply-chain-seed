@@ -8,10 +8,14 @@ The application consist of two parts: [server](#server) and [client](#client).
 
 ## Development
 
-To run the application, the following information must be known and provided:
-- The origin for the third party app, for example `https://example.com`.
-- The email to login to the third party app, for example `test@example.com`.
-- The password to login to the third party app, for example `password`.
+To run the application, **the following information must be known and provided in an `.env` file**.
+- The `APP_ORIGIN` for the third party app, for example `https://example.com`.
+- The `EMAIL` to login to the third party app, for example `test@example.com`.
+- The `PASSWORD` to login to the third party app, for example `password`.
+
+To make it easier, an `.env.example` file exists which can be used as a template.
+
+Note that it is also possible to set the same environment variables using other methods, although the `.env` is probably the easiest.
 
 1. Clone the git repository
 2. Install the npm dependencies from inside the project directory:
@@ -19,9 +23,9 @@ To run the application, the following information must be known and provided:
     $ npm i
     $ npm i --prefix client
     ```
-3. Start the server and client at the same time, providing the required information as environment variables on the command line:
+3. Start the server and client at the same time:
     ```console
-    $ APP_ORIGIN=https://example.com EMAIL=test@example.com PASSWORD=password npm start
+    $ npm start
     ```
 4. The web application, running on `http://localhost:3000`, will automatically open in a web browser.
 
@@ -47,6 +51,7 @@ The server is based on [Express](https://expressjs.com/), a minimal and flexible
 
 [Node Fetch](https://github.com/node-fetch/node-fetch#readme) is used as a lightweight implementation of `fetch` for Node.js. It is used for all network requests, such as fetching the JWT and GraphQL response.
 
+[dotenv](https://github.com/motdotla/dotenv#readme) is used to allow configuration of required information in a single `.env` file.
 ## Client
 
 The client is a static HTML website with corresponding JavaScript that makes a request to the API provided by the server.
