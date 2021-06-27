@@ -47,10 +47,14 @@ const format = function formatData(data) {
 };
 
 const getConsumptionVariables = function getConsumptionVariables() {
-  return {
-    from: "2020-01-01",
-    to: "2020-12-31",
-  };
+  const now = DateTime.now();
+  const endOfLastMonth = now.minus({ months: 1 }).endOf("month");
+  const oneYearAgo = endOfLastMonth.minus({ months: 11 }).startOf("month");
+
+  const from = oneYearAgo.toISODate();
+  const to = endOfLastMonth.toISODate();
+
+  return { from, to };
 };
 
 const consumption = async (req, res) => {
