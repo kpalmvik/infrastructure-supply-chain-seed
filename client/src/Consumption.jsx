@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
 import Average from "./Average";
-import TemperatureBars from "./TemperatureBars";
+import BarChart from "./BarChart";
 
 import styles from "./Consumption.module.css";
 
@@ -20,7 +20,7 @@ const Consumption = function Consumption({ children }) {
             title="Average monthly consumption"
             unit=""
           />
-          <TemperatureBars entries={data.items} />
+          <BarChart entries={data.items} />
         </>
       )}
       {!data && (
