@@ -1,6 +1,8 @@
 const fetch = require("node-fetch");
 const { GraphQLClient, gql } = require("graphql-request");
 
+const meanValue = require("./helpers/meanValue");
+
 const appOrigin = process.env.APP_ORIGIN;
 const email = process.env.EMAIL;
 const password = process.env.PASSWORD;
@@ -43,8 +45,6 @@ const queryGraphQL = async function queryGraphQL(token) {
 
   return await graphQLClient.request(query);
 };
-
-const meanValue = (entries) => entries.reduce((a, b) => a + b) / entries.length;
 
 const format = function formatData(data) {
   const rawEntries = data.me.home.weather.entries;
