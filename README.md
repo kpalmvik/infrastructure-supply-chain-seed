@@ -36,6 +36,10 @@ The server provides a simple API the the client can make a request to.
 
 The server is based on [Express](https://expressjs.com/), a minimal and flexible Node.js web application framework.
 
+[graphql-request](https://github.com/prisma-labs/graphql-request#readme) is used as a minimal GraphQL client implementation to talk to the third party GraphQL API.
+
+[Node Fetch](https://github.com/node-fetch/node-fetch#readme) is used as a lightweight implementation of `fetch` for Node.js. It is used for all network requests, such as fetching the JWT and GraphQL response.
+
 ## Client
 
 The client is a static HTML website with corresponding JavaScript that makes a request to the API provided by the server.
