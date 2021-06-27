@@ -20,16 +20,17 @@ To make it easier, an `.env.example` file exists which can be used as a template
 Note that it is also possible to set the same environment variables using other methods, although the `.env` is probably the easiest.
 
 1. Clone the git repository
-2. Install the npm dependencies from inside the project directory:
+2. Copy `.env.example` to `.env` and insert the correct values
+3. Install the npm dependencies from inside the project directory:
     ```console
     $ npm i
     $ npm i --prefix client
     ```
-3. Start the server and client at the same time:
+4. Start the server and client at the same time:
     ```console
     $ npm start
     ```
-4. The web application, running on `http://localhost:3000`, will automatically open in a web browser.
+5. The web application, running on `http://localhost:3000`, will automatically open in a web browser.
 
 Both the server and the client are automatically updated whenever the source files are changed.
 
