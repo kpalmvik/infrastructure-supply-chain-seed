@@ -1,4 +1,4 @@
-import styles from "./TemperatureBars.module.css";
+import styles from "./BarChart.module.css";
 
 const normalize = (entry, entries) => {
   const min = Math.min(...entries);
@@ -7,13 +7,13 @@ const normalize = (entry, entries) => {
   return (entry - min) / (max - min);
 };
 
-const TemperatureBars = function TemperatureBars({ entries }) {
+const BarChart = function BarChart({ entries }) {
   return (
-    <ul className={styles.temperatureBars}>
+    <ul className={styles.barChart}>
       {entries?.map((entry, i) => (
         <li
           key={`${i}${entry}`}
-          className={styles.temperatureBar}
+          className={styles.item}
           style={{ "--barValue": normalize(entry, entries) }}
         >
           <div className={styles.bar}></div>
@@ -23,4 +23,4 @@ const TemperatureBars = function TemperatureBars({ entries }) {
   );
 };
 
-export default TemperatureBars;
+export default BarChart;

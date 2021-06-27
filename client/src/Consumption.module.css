@@ -1,0 +1,12 @@
+.consumption {
+  background: var(--darkGray);
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .consumption {
+    padding: 48px;
+  }
+}

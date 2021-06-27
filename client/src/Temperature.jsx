@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
 import Average from "./Average";
-import TemperatureBars from "./TemperatureBars";
+import BarChart from "./BarChart";
 
 import styles from "./Temperature.module.css";
 
@@ -15,8 +15,12 @@ const Temperature = function Temperature({ children }) {
     <div className={styles.temperature}>
       {data && (
         <>
-          <Average average={data.average} />
-          <TemperatureBars entries={data.entries} />
+          <Average
+            average={data.average}
+            title="Average temperature"
+            unit="°"
+          />
+          <BarChart entries={data.entries} />
         </>
       )}
       {!data && (
