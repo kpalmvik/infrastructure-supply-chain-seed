@@ -4,6 +4,7 @@ import Button from "./Button";
 import ButtonBar from "./ButtonBar";
 import Card from "./Card";
 import Cards from "./Cards";
+import Consumption from "./Consumption";
 import Content from "./Content";
 import Header from "./Header";
 import MainText from "./MainText";
@@ -19,8 +20,7 @@ function App() {
     <>
       <Header />
       <Content>
-        {trick ? "🦄" : "🍮"}
-        <Temperature />
+        {trick ? <Consumption /> : <Temperature />}
         <ButtonBar>
           <Button onClick={() => setTrick(true)}>Show me a Trick</Button>
           <Button secondary type="reset" onClick={() => setTrick(false)}>
