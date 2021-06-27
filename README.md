@@ -1,10 +1,17 @@
 # Infrastructure Supply Chain Seed Lean Startup Technology (ISCSLST)
 
-**ISCSLST** is an API driven web application that displays the temperatures for the current day. The data is fetched by the client from the server API, which returns a mocked dataset with an average and individual hourly temperatures.
+**ISCSLST** is an API driven web application that displays the hourly temperatures and average value for the current day.
+
+The data is fetched by the client from the server API, which in turn makes a request to a third party API service returning hourly temperature readings.
 
 The application consist of two parts: [server](#server) and [client](#client).
 
 ## Development
+
+To run the application, the following information must be known and provided:
+- The origin for the third party app, for example `https://example.com`.
+- The email to login to the third party app, for example `test@example.com`.
+- The password to login to the third party app, for example `password`.
 
 1. Clone the git repository
 2. Install the npm dependencies from inside the project directory:
@@ -12,9 +19,9 @@ The application consist of two parts: [server](#server) and [client](#client).
     $ npm i
     $ npm i --prefix client
     ```
-3. Start the server and client at the same time:
+3. Start the server and client at the same time, providing the required information as environment variables on the command line:
     ```console
-    $ npm start
+    $ APP_ORIGIN=https://example.com EMAIL=test@example.com PASSWORD=password npm start
     ```
 4. The web application, running on `http://localhost:3000`, will automatically open in a web browser.
 
@@ -35,6 +42,10 @@ The server provides a simple API the the client can make a request to.
 ### Technology Used
 
 The server is based on [Express](https://expressjs.com/), a minimal and flexible Node.js web application framework.
+
+[graphql-request](https://github.com/prisma-labs/graphql-request#readme) is used as a minimal GraphQL client implementation to talk to the third party GraphQL API.
+
+[Node Fetch](https://github.com/node-fetch/node-fetch#readme) is used as a lightweight implementation of `fetch` for Node.js. It is used for all network requests, such as fetching the JWT and GraphQL response.
 
 ## Client
 
