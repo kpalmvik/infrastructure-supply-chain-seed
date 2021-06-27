@@ -36,7 +36,7 @@ const getJWT = async function getJSONWebToken(email, password) {
   return await response.json();
 };
 
-const queryGraphQL = async function queryGraphQL(token, query) {
+const queryGraphQL = async function queryGraphQL(apiEndpointURL, token, query) {
   const graphQLClient = new GraphQLClient(apiEndpointURL, {
     headers: { authorization: `Bearer ${token}` },
   });
@@ -55,7 +55,7 @@ const format = function formatData(data) {
 
 const temperature = async (req, res) => {
   const jwt = await getJWT(email, password);
-  const data = await queryGraphQL(jwt.token, temperatureQuery);
+  const data = await queryGraphQL(apiEndpointURL, jwt.token, temperatureQuery);
   const formattedData = format(data);
   res.json(formattedData);
 };
