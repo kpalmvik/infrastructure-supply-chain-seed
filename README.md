@@ -68,7 +68,9 @@ The server is based on [Express](https://expressjs.com/), a minimal and flexible
 [dotenv](https://github.com/motdotla/dotenv#readme) is used to allow configuration of required information in a single `.env` file.
 ## Client
 
-The client is a static HTML website with corresponding JavaScript that makes a request to the API provided by the server.
+The client is a static HTML website with corresponding JavaScript that makes a request to the API provided by the server. The data is automatically updated every 30 seconds, although the server API is cached so most of the responses should return almost instantly.
 ### Technology Used
 
 The client is based on [Create React App](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to quickly create an efficient development environment.
+
+The server API data is fetched from the server API through [SWR](https://github.com/vercel/swr).

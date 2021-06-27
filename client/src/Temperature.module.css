@@ -2,8 +2,7 @@
   background: var(--darkBlue);
   color: #fff;
   padding: 12px;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  text-align: center;
 }
 
 @media screen and (min-width: 800px) {

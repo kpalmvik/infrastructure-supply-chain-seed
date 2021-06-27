@@ -10,8 +10,9 @@ const normalize = (entry, entries) => {
 const TemperatureBars = function TemperatureBars({ entries }) {
   return (
     <ul className={styles.temperatureBars}>
-      {entries?.map((entry) => (
+      {entries?.map((entry, i) => (
         <li
+          key={`${i}${entry}`}
           className={styles.temperatureBar}
           style={{ "--barValue": normalize(entry, entries) }}
         >
