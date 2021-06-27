@@ -12,7 +12,7 @@ const Card = function Card({ large, title, imgSrc }) {
             [styles.largeImage]: large,
           })}
         />
-        {!large && <h2 class={styles.title}>{title}</h2>}
+        {!large && <h2 className={styles.title}>{title}</h2>}
       </div>
     </>
   );
