@@ -1,9 +1,15 @@
 import Button from "./Button";
 import ButtonBar from "./ButtonBar";
+import Card from "./Card";
+import Cards from "./Cards";
 import Content from "./Content";
 import Header from "./Header";
 import MainText from "./MainText";
 import Temperature from "./Temperature";
+
+import shot12 from "./images/shot12.png";
+import teslaCat from "./images/tesla-cat.png";
+import yard from "./images/yard.png";
 
 function App() {
   return (
@@ -30,21 +36,14 @@ function App() {
             graphical user interface
           </p>
         </MainText>
-        <section>
-          <ul>
-            <li>
-              <strong>Shot12 image</strong>
-            </li>
-            <li>
-              <strong>Yard 1 image</strong>
-              <h2>Direct mailing strategy buzz social proof</h2>
-            </li>
-            <li>
-              <strong>Tesla cat image</strong>
-              <h2>Hypotheses value proposition</h2>
-            </li>
-          </ul>
-        </section>
+        <Cards>
+          <Card large imgSrc={shot12} />
+          <Card
+            title="Direct mailing strategy buzz social proof"
+            imgSrc={teslaCat}
+          />
+          <Card title="Hypotheses value proposition" imgSrc={yard} />
+        </Cards>
       </Content>
     </>
   );

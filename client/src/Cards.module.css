@@ -1,0 +1,32 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 12px;
+  max-width: 542px;
+  margin: 0 auto;
+}
+
+.item {
+  height: 100%;
+}
+
+@media screen and (min-width: 650px) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .cards {
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 48px;
+  }
+}
