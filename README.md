@@ -2,7 +2,9 @@
 
 **ISCSLST** is an API driven web application that displays the hourly temperatures and average value for the current day.
 
-The data is fetched by the client from the server API, which in turn makes a request to a third party API service returning hourly temperature readings.
+By clicking on the "Show me a Trick" button, the monthly consumption for the last year is shown together with the average monthly consumption for the period.
+
+The data is fetched by the client from the server API, which in turn makes a request to a third party API service returning hourly temperature readings and consumption history.
 
 The application consist of two parts: [server](#server) and [client](#client).
 
