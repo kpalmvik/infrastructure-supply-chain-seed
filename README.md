@@ -44,7 +44,9 @@ The server and client are simultaneously started by running `npm start`, through
 
 ## Server
 
-The server provides a simple API the the client can make a request to.
+The server provides a simple API the the client can make a request to. Two endpoints currently exists.
+
+### Temperature
 
 `/api/temperature` returns a JSON structure with the individual temperatures for each hour during the current day, and the (rounded) average temperature.
 
@@ -57,7 +59,19 @@ Example:
 ```
 
 The server API response is cached for 5 minutes to avoid making repeated requests to the third party GraphQL API. A corresponding `max-age` header is also set on the response, so that a web browser can cache the response until it expires.
+### Consumption
 
+`/api/consumption` returns a JSON structure with the monthly consumption for the last 12 complete months, and the (rounded) average consumption.
+
+Example:
+```json
+{
+  "average": 1171,
+  "items": [508.43600000000004,565.178,622.842,758.475,1061.587,1299.573,1605.3,2322.862,2147.029,1617.138,1204.344,336.916]
+}
+```
+
+The server API response is cached for 30 minutes to avoid making repeated requests to the third party GraphQL API. A corresponding `max-age` header is also set on the response, so that a web browser can cache the response until it expires.
 ### Technology Used
 
 The server is based on [Express](https://expressjs.com/), a minimal and flexible Node.js web application framework.
