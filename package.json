@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "graphql": "^15.5.1",
     "graphql-request": "^3.4.0",
+    "luxon": "^1.27.0",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
