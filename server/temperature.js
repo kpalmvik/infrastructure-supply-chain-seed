@@ -10,6 +10,20 @@ const password = process.env.PASSWORD;
 const tokenURL = `${appOrigin}/v4/login.credentials`;
 const apiEndpointURL = `${appOrigin}/v4/gql`;
 
+const temperatureQuery = gql`
+  {
+    me {
+      home(id: "a8c210fc-2988-4f06-9fe9-ab1bad9529d5") {
+        weather {
+          entries {
+            temperature
+          }
+        }
+      }
+    }
+  }
+`;
+
 const getJWT = async function getJSONWebToken(email, password) {
   const response = await fetch(tokenURL, {
     method: "POST",
@@ -22,25 +36,9 @@ const getJWT = async function getJSONWebToken(email, password) {
   return await response.json();
 };
 
-const queryGraphQL = async function queryGraphQL(token) {
-  const query = gql`
-    {
-      me {
-        home(id: "a8c210fc-2988-4f06-9fe9-ab1bad9529d5") {
-          weather {
-            entries {
-              temperature
-            }
-          }
-        }
-      }
-    }
-  `;
-
+const queryGraphQL = async function queryGraphQL(token, query) {
   const graphQLClient = new GraphQLClient(apiEndpointURL, {
-    headers: {
-      authorization: `Bearer ${token}`,
-    },
+    headers: { authorization: `Bearer ${token}` },
   });
 
   return await graphQLClient.request(query);
@@ -57,7 +55,7 @@ const format = function formatData(data) {
 
 const temperature = async (req, res) => {
   const jwt = await getJWT(email, password);
-  const data = await queryGraphQL(jwt.token);
+  const data = await queryGraphQL(jwt.token, temperatureQuery);
   const formattedData = format(data);
   res.json(formattedData);
 };
