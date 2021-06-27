@@ -43,9 +43,23 @@ The server and client are simultaneously started by running `npm start`, through
 
 The server provides a simple API the the client can make a request to.
 
+`/api/temperature` returns a JSON structure with the individual temperatures for each hour during the current day, and the (rounded) average temperature.
+
+Example:
+```json
+{
+  "average": 19,
+  "entries": [17.8,17,16.7,17.6,17.6,17.7,18.4,17.9,19.7,21.4,22.6,23.8,23.8,23.7,24.1,20.2,18.2,18.3,18.7,17.8,18.5,18.5,17.8,17.6]
+}
+```
+
+The server API response is cached for 5 minutes to avoid making repeated requests to the third party GraphQL API. A corresponding `max-age` header is also set on the response, so that a web browser can cache the response until it expires.
+
 ### Technology Used
 
 The server is based on [Express](https://expressjs.com/), a minimal and flexible Node.js web application framework.
+
+[apicache](https://github.com/kwhitley/apicache#readme) is used as an Express middleware to cache the API response.
 
 [graphql-request](https://github.com/prisma-labs/graphql-request#readme) is used as a minimal GraphQL client implementation to talk to the third party GraphQL API.
 
