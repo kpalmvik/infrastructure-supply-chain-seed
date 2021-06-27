@@ -1,22 +1,30 @@
-import { useState, useEffect } from "react";
+import useSWR from "swr";
 
 import Average from "./Average";
 import TemperatureBars from "./TemperatureBars";
 
 import styles from "./Temperature.module.css";
 
+const fetcher = (url) => fetch(url).then((r) => r.json());
+const swrOptions = { refreshInterval: 30 * 1000 };
+
 const Temperature = function Temperature({ children }) {
-  const [temperatureData, setTemperatureData] = useState();
-  useEffect(() => {
-    fetch("/api/temperature")
-      .then((response) => response.json())
-      .then((data) => setTemperatureData(data));
-  }, []);
+  const { data, error } = useSWR("/api/temperature", fetcher, swrOptions);
 
   return (
     <div className={styles.temperature}>
-      <Average average={temperatureData?.average} />
-      <TemperatureBars entries={temperatureData?.entries} />
+      {data && (
+        <>
+          <Average average={data.average} />
+          <TemperatureBars entries={data.entries} />
+        </>
+      )}
+      {!data && (
+        <>
+          {error && <h2>Error loading temperatures</h2>}
+          {!error && <h2>Loading temperatures</h2>}
+        </>
+      )}
     </div>
   );
 };
