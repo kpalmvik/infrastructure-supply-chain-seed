@@ -7,10 +7,32 @@
   border: 1px solid var(--turquoise);
   background-color: var(--turquoise);
   color: #fff;
+  transition: transform 0.5s;
+}
+
+.button:hover {
+  border-color: var(--darkGray);
+  transform: scale(105%);
+  transition: transform 1s;
+}
+
+.button:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: var(--fireRed);
+  color: #000;
 }
 
 .secondary {
   border-color: var(--darkGray);
   background-color: #fff;
   color: var(--darkGray);
+}
+
+.secondary:hover {
+  border-color: var(--turquoise);
+}
+
+.secondary:focus {
+  border-color: var(--fireRed);
 }
