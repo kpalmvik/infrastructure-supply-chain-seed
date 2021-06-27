@@ -24,12 +24,10 @@ const temperatureQuery = gql`
   }
 `;
 
-const getJWT = async function getJSONWebToken(email, password) {
+const getJWT = async function getJSONWebToken(tokenURL, email, password) {
   const response = await fetch(tokenURL, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
   });
 
@@ -54,7 +52,7 @@ const format = function formatData(data) {
 };
 
 const temperature = async (req, res) => {
-  const jwt = await getJWT(email, password);
+  const jwt = await getJWT(tokenURL, email, password);
   const data = await queryGraphQL(apiEndpointURL, jwt.token, temperatureQuery);
   const formattedData = format(data);
   res.json(formattedData);
