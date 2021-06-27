@@ -2,7 +2,7 @@
 
 **ISCSLST** is an API driven web application that displays the hourly temperatures and average value for the current day.
 
-By clicking on the "Show me a Trick" button, the monthly consumption for the last year is shown together with the average monthly consumption for the period.
+By clicking on the "Show me a Trick" button, the monthly consumption for the last year is shown together with the average monthly consumption for the period. Clicking "Reset" will return to the original state.
 
 The data is fetched by the client from the server API, which in turn makes a request to a third party API service returning hourly temperature readings and consumption history.
 
@@ -20,16 +20,17 @@ To make it easier, an `.env.example` file exists which can be used as a template
 Note that it is also possible to set the same environment variables using other methods, although the `.env` is probably the easiest.
 
 1. Clone the git repository
-2. Install the npm dependencies from inside the project directory:
+2. Copy `.env.example` to `.env` and insert the correct values
+3. Install the npm dependencies from inside the project directory:
     ```console
     $ npm i
     $ npm i --prefix client
     ```
-3. Start the server and client at the same time:
+4. Start the server and client at the same time:
     ```console
     $ npm start
     ```
-4. The web application, running on `http://localhost:3000`, will automatically open in a web browser.
+5. The web application, running on `http://localhost:3000`, will automatically open in a web browser.
 
 Both the server and the client are automatically updated whenever the source files are changed.
 
@@ -43,7 +44,9 @@ The server and client are simultaneously started by running `npm start`, through
 
 ## Server
 
-The server provides a simple API the the client can make a request to.
+The server provides a simple API the the client can make a request to. Two endpoints currently exists.
+
+### Temperature
 
 `/api/temperature` returns a JSON structure with the individual temperatures for each hour during the current day, and the (rounded) average temperature.
 
@@ -56,7 +59,19 @@ Example:
 ```
 
 The server API response is cached for 5 minutes to avoid making repeated requests to the third party GraphQL API. A corresponding `max-age` header is also set on the response, so that a web browser can cache the response until it expires.
+### Consumption
 
+`/api/consumption` returns a JSON structure with the monthly consumption for the last 12 complete months, and the (rounded) average consumption.
+
+Example:
+```json
+{
+  "average": 1171,
+  "items": [508.43600000000004,565.178,622.842,758.475,1061.587,1299.573,1605.3,2322.862,2147.029,1617.138,1204.344,336.916]
+}
+```
+
+The server API response is cached for 30 minutes to avoid making repeated requests to the third party GraphQL API. A corresponding `max-age` header is also set on the response, so that a web browser can cache the response until it expires.
 ### Technology Used
 
 The server is based on [Express](https://expressjs.com/), a minimal and flexible Node.js web application framework.
