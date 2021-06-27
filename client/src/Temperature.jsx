@@ -15,7 +15,11 @@ const Temperature = function Temperature({ children }) {
     <div className={styles.temperature}>
       {data && (
         <>
-          <Average average={data.average} />
+          <Average
+            average={data.average}
+            title="Average temperature"
+            unit="°"
+          />
           <TemperatureBars entries={data.entries} />
         </>
       )}

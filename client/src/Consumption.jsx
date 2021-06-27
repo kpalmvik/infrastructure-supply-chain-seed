@@ -15,7 +15,11 @@ const Consumption = function Consumption({ children }) {
     <div className={styles.consumption}>
       {data && (
         <>
-          <Average average={data.average} />
+          <Average
+            average={data.average}
+            title="Average monthly consumption"
+            unit=""
+          />
           <TemperatureBars entries={data.items} />
         </>
       )}
