@@ -1,7 +1,8 @@
 const fetch = require("node-fetch");
-const { GraphQLClient, gql } = require("graphql-request");
+const { GraphQLClient } = require("graphql-request");
 
 const meanValue = require("./helpers/meanValue");
+const temperatureQuery = require("./temperatureQuery");
 
 const appOrigin = process.env.APP_ORIGIN;
 const email = process.env.EMAIL;
@@ -9,20 +10,6 @@ const password = process.env.PASSWORD;
 
 const tokenURL = `${appOrigin}/v4/login.credentials`;
 const apiEndpointURL = `${appOrigin}/v4/gql`;
-
-const temperatureQuery = gql`
-  {
-    me {
-      home(id: "a8c210fc-2988-4f06-9fe9-ab1bad9529d5") {
-        weather {
-          entries {
-            temperature
-          }
-        }
-      }
-    }
-  }
-`;
 
 const getJWT = async function getJSONWebToken(tokenURL, email, password) {
   const response = await fetch(tokenURL, {
